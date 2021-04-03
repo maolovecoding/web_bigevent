@@ -1,0 +1,71 @@
+/* 绘制登录页面样式 */
+
+/* 去除默认的外边距和内边距 */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  /* 设置背景颜色 */
+  background: url(../images/login_bg.jpg) no-repeat center;
+  /* 设置图片填充模式 */
+  /* cover 保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小 */
+  background-size: cover;
+}
+
+/* 版心 使用layui的版心 */
+/* 登录的样式 */
+.loginAndRegBox {
+  /* 居中 在整个页面的中间进行显示 */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 310px;
+  background-color: white;
+}
+
+.title-box {
+  height: 60px;
+  background: url('../images/login_title.png') no-repeat center;
+}
+
+/* 登录和注册表单的盒子 */
+/* 隐藏注册盒子 */
+.reg-box {
+  display: none;
+}
+
+/* 设置表单内边距 */
+.login-form,.reg-form {
+  padding: 0 30px;
+}
+
+/* 登录注册表单切换的标签样式 */
+.links {
+  /* 弹性布局  靠右显示 */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.links a {
+  font-size: 12px;
+}
+
+/* 图标定位到输入框上面 */
+.layui-form-item {
+  position: relative;
+}
+
+.layui-icon {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+/* 设置输入框内边距 让图标不压着输入框的字*/
+.layui-input {
+  padding-left: 32px!important;
+}
