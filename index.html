@@ -1,12 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!-- layui的css文件 -->
+  <link rel="stylesheet" href="./assets/lib/layui/css/layui.css">
+  <!-- 导入css样式 -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <!-- 图标文件样式 -->
+  <link rel="stylesheet" href="./assets/fonts/iconfont.css">
+  <!-- jquery -->
+  <script src="./assets/lib/jquery.js"></script>
+
 </head>
-<body>
-  
+
+<body class="layui-layout-body">
+  <div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+      <div class="layui-logo">
+        <img src="./assets/images/logo.png" alt="" />
+      </div>
+      <!-- 头部区域（可配合layui已有的水平导航） -->
+      <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+          <a href="javascript:;" class="userinfo">
+            <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+            <!-- 文本头像 用户未上传头像时使用文字头像 -->
+            <span class="text-avatar">A</span>
+            个人中心
+          </a>
+          <dl class="layui-nav-child">
+            <dd><a href="javascript:;">基本资料</a></dd>
+            <dd><a href="javascript:;">更换头像</a></dd>
+            <dd><a href="javascript:;">重置密码</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;" id="btnLogout">
+            <span class="iconfont icon-tuichu"></span>退出
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+      <div class="layui-side-scroll">
+        <!-- 用户头像区域 -->
+        <div class="userinfo">
+          <img src="http://t.cn/RCzsdCq" class="layui-nav-img" />
+          <!-- 文本头像 用户未上传头像时使用文字头像 -->
+          <span class="text-avatar">A</span>
+          <span id="welcome">欢迎 </span>
+        </div>
+        <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+        <ul class="layui-nav layui-nav-tree" lay-shrink="all" lay-filter="test">
+
+          <li class="layui-nav-item layui-this">
+            <!-- 首页是事先写好的 在iframe标签中打开-->
+            <a href="./home/dashboard.html" target="fm">
+              <span class="iconfont icon-home"></span>首页
+            </a>
+          </li>
+          <li class="layui-nav-item">
+            <a class="" href="javascript:;"><span class="iconfont icon-16"></span>文章管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章类别</a></dd>
+              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>文章列表</a></dd>
+              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>发布文章</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;"><span class="iconfont icon-user"></span>个人中心</a>
+            <dl class="layui-nav-child">
+              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>基本资料</a></dd>
+              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>更换头像</a></dd>
+              <dd><a href="javascript:;"><i class="layui-icon layui-icon-app"></i>重置密码</a></dd>
+            </dl>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- 内容主体区域 -->
+    <div class="layui-body">
+
+      <!-- iframe 标签 name属性用来指定当前iframe的名称 src属性规定在iframe中显示的文档URL -->
+      <!-- 指定src属性 一上来就显示主页面 -->
+      <!-- 然后让首页一上来就默认被选中 -->
+      <iframe name="fm" class="iframe" src="./home/dashboard.html" frameborder="0">
+        <!-- a标签的href属性用来指定打开那个网页 target属性用来指定在哪里打开网页 -->
+        <!-- target=iframe标签的name属性的值 表示在iframe中打开指定的网页 -->
+      </iframe>
+    </div>
+
+
+
+    <div class="layui-footer footer">
+      <!-- 底部固定区域 -->
+      © www.mao.cn 听雨少年
+    </div>
+  </div>
+
+
+
+  <!-- 导入layui的js文件 -->
+  <script src="./assets/lib/layui/layui.all.js"></script>
+
+  <!-- 首页 的js文件 -->
+  <script src="./assets/js/baseAPI.js"></script>
+  <script src="./assets/js/index.js"></script>
 </body>
+
 </html>

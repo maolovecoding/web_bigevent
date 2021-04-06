@@ -57,3 +57,9 @@ git checkout main
 # 合并分支代码到主分支
 git merge login
 ```
+
+### 主页以及相关功能的开发
+```shell
+# 创建index分支并切换到 index分支
+git checkout -b index
+```

@@ -96,7 +96,8 @@ $(function () {
     // 阻止表单默认提交行为
     event.preventDefault();
     // 获取表单数据
-    const formData = $(this).serialize().split("&");
+    // const formData = $(this).serialize().split("&");
+    const formData = $(this).serialize();
     // 发起ajax的post请求 验证用户名和密码是否正确
     $.ajax({
       type: "POST",
@@ -112,11 +113,11 @@ $(function () {
           return layer.msg(res.message);
         }
         // 验证成功 
-        layer.meg(res.message, { icon: 1, time: 2000 });
+        layer.msg(res.message, { icon: 1, time: 2000 });
         // 需要保存 reg.token的值 保存到本地存储
         localStorage.setItem("token", res.token);
         // 跳转到 后台主页
-        location.href = "/index.html";
+        location.href = "./index.html";
       }
     })
   })
