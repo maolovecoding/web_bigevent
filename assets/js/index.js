@@ -32,7 +32,7 @@ function getUserInfo() {
   // 请求失败 调用 error函数
   // 无论成功或者失败 都会调用 complete函数
 
-  
+
 
   $.ajax({
     method: "GET",
@@ -62,31 +62,31 @@ function getUserInfo() {
     } */
   });
 
-// 渲染头像的函数
-function renderAvatar(user) {
-  // 显示欢迎 xxx  如果用户有昵称  就优先渲染昵称
-  // 没有昵称 就渲染名字
-  // 渲染欢迎文本
-  const name = user.nickname || user.username;
-  /* if (user.nickname) {
-    $("#welcome").html(`欢迎&nbsp;&nbsp;${user.nickname}`);
-  } else {
-    $("#welcome").html(`欢迎&nbsp;&nbsp;${user.username}`);
-  } */
-  $("#welcome").html(`欢迎&nbsp;&nbsp;${name}`);
-  // 渲染用户头像
-  // 如果用户具有头像 也就是 user_pic 那么就显示用户的头像
-  // 如果没有设置头像  比如刚刚注册好账号 
-  // 没有头像就渲染用户名或者昵称的第一个字符为头像
-  if (user.user_pic) {
-    // 设置了用户头像
-    $(".userinfo").children("img").prop("src", user.user_pic).show();
-    // 隐藏文字元素头像
-    $(".userinfo").children("span").eq(0).hide();
-  } else {
-    // 么有设置头像 渲染文本头像
-    $(".userinfo").children("img").hide();
-    $(".userinfo").children(".text-avatar").html(name[0].toUpperCase()).show();
+  // 渲染头像的函数
+  function renderAvatar(user) {
+    // 显示欢迎 xxx  如果用户有昵称  就优先渲染昵称
+    // 没有昵称 就渲染名字
+    // 渲染欢迎文本
+    const name = user.nickname || user.username;
+    /* if (user.nickname) {
+      $("#welcome").html(`欢迎&nbsp;&nbsp;${user.nickname}`);
+    } else {
+      $("#welcome").html(`欢迎&nbsp;&nbsp;${user.username}`);
+    } */
+    $("#welcome").html(`欢迎&nbsp;&nbsp;${name}`);
+    // 渲染用户头像
+    // 如果用户具有头像 也就是 user_pic 那么就显示用户的头像
+    // 如果没有设置头像  比如刚刚注册好账号 
+    // 没有头像就渲染用户名或者昵称的第一个字符为头像
+    if (user.user_pic) {
+      // 设置了用户头像
+      $(".userinfo>img").prop("src", user.user_pic).show();
+      // 隐藏文字元素头像
+      $(".userinfo>.text-avatar").hide();
+    } else {
+      // 么有设置头像 渲染文本头像
+      $(".userinfo").children("img").hide();
+      $(".userinfo").children(".text-avatar").html(name[0].toUpperCase()).show();
+    }
   }
-
 }
