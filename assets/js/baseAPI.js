@@ -5,8 +5,9 @@
 // options 参数 就是发起请求时传递的那个配置对象
 $.ajaxPrefilter(function (options) {
   // 拼接url地址 然后才会发起请求
-  options.url = "http://ajax.frontend.itheima.net" + options.url;
-
+  // options.url = "http://ajax.frontend.itheima.net" + options.url;
+  options.url = "http://api-breakingnews-web.itheima.net" + options.url;
+  
   // 统一为有权限的接口 设置headers请求头
   // 以 /my 开头的路径才加上这个请求头属性
   if(options.url.includes("/my/")){
